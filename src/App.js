@@ -48,7 +48,7 @@ const Nav = (props)=> {
       id: preData.id,
       source: preData.source,
       name: preData.name,
-      price: preData.price;
+      price: preData.price,
       count: Number(value),
     }})
   }
@@ -92,20 +92,20 @@ const Nav = (props)=> {
 
 const Subcart = (props) => {
   const {data, changeCount, removeElement} = props;
-  return(
-    <div className='sub_cart'>
-      <div>
-        <img src={ images/car.jpg } alt="image1"/>
-        <div className='sub-content'>
-          <p>{data.name}</p>
-          <button onClick={() => removeElement(data.id)}>Remove</button>
-        </div>
-        <div className='sub-count'>
-          <input type='number' value={data.count} onChange={(e) => changeCount (data.id, data, e.target.value)}/>
-        </div>
-      </div>
-    </div>
-  );
+  return (
+		<div className="sub_cart">
+			<div>
+				<img src={data.source} alt="" /> 
+				<div className="sub_content">
+					<p>{data.name}</p>
+					<button onClick={() => removeElement(data.id)}>Remove</button>
+				</div>
+				<div className="sub_count">
+					<input type="number" value={data.count} onChange={(e) => changeCount(data.id, data, e.target.value)} />
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
