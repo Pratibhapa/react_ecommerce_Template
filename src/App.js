@@ -44,7 +44,7 @@ const Nav = (props)=> {
   }
 
   const changeCount = (id, preData, value) => {
-    setSubData({...subData, [preData.id];{
+    setSubData({...subData, [preData.id]: {
       id: preData.id,
       source: preData.source,
       name: preData.name,
@@ -82,11 +82,30 @@ const Nav = (props)=> {
             (<p>No items found</p>)
           }
         </div>
-        
+        <div className='checkout'>
+          <button onClick={handleCheckout}>checkout</button>
+        </div>
       </div>
     </div>
   )
+}
 
+const Subcart = (props) => {
+  const {data, changeCount, removeElement} = props;
+  return(
+    <div className='sub_cart'>
+      <div>
+        <img src={ images/car.jpg } alt="image1"/>
+        <div className='sub-content'>
+          <p>{data.name}</p>
+          <button onClick={() => removeElement(data.id)}>Remove</button>
+        </div>
+        <div className='sub-count'>
+          <input type='number' value={data.count} onChange={(e) => changeCount (data.id, data, e.target.value)}/>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
