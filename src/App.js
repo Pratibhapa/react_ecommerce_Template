@@ -169,8 +169,43 @@ const cartItem = (props) => {
 
 const carts = [
   {
-    id: 1
+    id: 1,
+    source: "images/car.jpg",
+    name: "product 1",
+    price: 10.25
+  },
+  {
+    id: 2,
+    source: images/cartItem.jpg,
+    price: 12.5
+  },
+  {
+    id: 3,
+    source: "images/car.jpg",
+    price: 12.5
+  },
+  {
+    id: 4,
+    source: images/car.jpg,
+    price: 16.5
+  },
+  {
+    id:5,
+    source: images/car.jpg,
+    price: 17
+  },
+  {
+    id: 6,
+    source: images/car.jpg,
+    price: 17.56
+  },
+  {
+    id: 7,
+    source: images.car.jpg,
+    price: 20
   }
 ]
 
+ReactDOM.render(<App/>,
+document.getElementById("root"));
 export default App;
