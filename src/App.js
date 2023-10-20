@@ -108,4 +108,69 @@ const Subcart = (props) => {
 	);
 }
 
+const Header = (props) => {
+  const {setOpenNav, openNav, setSubData, subData} = props;
+  const [totalCount, setTotalCount] = useState(0);
+
+  useEffect(() => {
+    var bumpTotal = 0;
+    Object.keys(subData).map((key) => {
+      bumpTotal += subData[key]["count"];
+    });
+    setTotalCount(bumpTotal);
+  }, [subData]);
+
+  return (
+    <header>
+      <div>
+        <h2>Shop</h2>
+      </div>
+      <div className='navbar'>
+        <button onClick={() => setOpenNav(!openNav)}>
+          <i class="fa-solid fa-cart-shopping"></i>
+          {totalCount > 0 ?  (
+            <div className='cart_count'>
+              {totalCount}
+            </div>
+          ) : null}
+        </button>
+        {openNav && <Nav setOpenNav={setOpenNav} setSubData={setSubData} subData={subData}/>}
+      </div>
+    </header>
+  )
+}
+
+const cartItem = (props) => {
+  const {data, setSubData, subData} = props;
+
+  const  addCart = (data) => {
+    setSubData({...subData, [data.id]: {
+      id: data.id,
+      source: data.source,
+      price: data.price,
+      count: subData[data.id] ?
+      subData[data.id] ["count"] + 1 : 1,
+    }})
+  }
+
+  return(
+    <div className='card'>
+      <div className='avatar'>
+        <img src={data.source} alt=''/>
+      </div>
+
+      <div className='content'>
+        <p>$ {data.price}</p>
+        <button onClick={() => addCart(data)}> Add Cart</button>
+      </div>
+    </div>
+  )
+}
+
+const carts = [
+  {
+    id: 1
+  }
+]
+
 export default App;
