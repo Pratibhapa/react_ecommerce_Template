@@ -31,9 +31,18 @@ const Nav = (props)=> {
         delete bump [key];
         setSubData(bump);
       }
-      
-    })
-  })
+      bumpTotal = bumpTotal + subData[key] ["price"] * subData[key]["count"];
+    });
+
+    setTotalPrice(bumpTotal);
+  }, [subData]);
+
+  const removeElement = (id) => {
+    let bump = {...subData};
+    delete bump[id];
+    setSubData(bump);
+  }
+  
 
 }
 
