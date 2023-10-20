@@ -42,7 +42,50 @@ const Nav = (props)=> {
     delete bump[id];
     setSubData(bump);
   }
-  
+
+  const changeCount = (id, preData, value) => {
+    setSubData({...subData, [preData.id];{
+      id: preData.id,
+      source: preData.source,
+      name: preData.name,
+      price: preData.price;
+      count: Number(value),
+    }})
+  }
+
+  const handleCheckout =() => {
+    alert("purchased" + totalPrice + "$");
+  }
+  return (
+    <div className='nav'>
+      <div className='nav-content'>
+        <div className='close'>
+          <p>Your Cart</p>
+          <button onClick={() => setOpenNav(false)}>
+            <i className='fa-regular fa-circle-xmaek'></i>
+          </button>
+        </div>
+
+        <div className='subtotal'>
+          <p>Subtotal</p>
+          <p>
+            {Number (totalPrice).toFixed(2)}$
+          </p>
+        </div>
+        <div className='added_carts'>
+          {
+            Object.keys(subData).length> 0 ?
+
+            Object.keys(subData).map((key, index) => (
+              <subCart data = {subData[key]} changeCount= {changeCount} removeElement= {removeElement}/>
+            )):
+            (<p>No items found</p>)
+          }
+        </div>
+        
+      </div>
+    </div>
+  )
 
 }
 
