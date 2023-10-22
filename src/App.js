@@ -34,6 +34,7 @@ const Nav = (props)=> {
       bumpTotal = bumpTotal + subData[key] ["price"] * subData[key]["count"];
     });
 
+    
     setTotalPrice(bumpTotal);
   }, [subData]);
 
