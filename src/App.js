@@ -17,8 +17,7 @@ function App() {
          ))
         }
       </div>
-    </div>
-    
+    </div> 
   ); 
 }
 
@@ -122,6 +121,7 @@ const Header = (props) => {
     setTotalCount(bumpTotal);
   }, [subData]);
 
+  
   return (
     <header>
       <div>
