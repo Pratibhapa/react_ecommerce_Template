@@ -141,7 +141,6 @@ const Header = (props) => {
     </header>
   )
 }
-
 const cartItem = (props) => {
   const {data, setSubData, subData} = props;
 
