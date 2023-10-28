@@ -160,7 +160,6 @@ const cartItem = (props) => {
       <div className='avatar'>
         <img src={data.source} alt=''/>
       </div>
-
       <div className='content'>
         <p>$ {data.price}</p>
         <button onClick={() => addCart(data)}> Add Cart</button>
