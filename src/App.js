@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import subCart from './subCart';
+import ReactDOM from 'react-dom';
 
 function App() {
   const [openNav, setOpenNav] = useState(false);
@@ -63,7 +65,7 @@ const Nav = (props)=> {
         <div className='close'>
           <p>Your Cart</p>
           <button onClick={() => setOpenNav(false)}>
-            <i className='fa-regular fa-circle-xmaek'></i>
+            <i className='fa-regular fa-circle-xmark'></i>
           </button>
         </div>
 
@@ -91,7 +93,7 @@ const Nav = (props)=> {
   )
 }
 
-const Subcart = (props) => {
+const SubCart = (props) => {
   const {data, changeCount, removeElement} = props;
   return (
 		<div className="sub_cart">
@@ -171,38 +173,38 @@ const cartItem = (props) => {
 const carts = [
   {
     id: 1,
-    source: "images/car.jpg",
+    source: "src/images/car.jpg",
     name: "product 1",
     price: 10.25
   },
   {
     id: 2,
-    source: images/cartItem.jpg,
+    source: "src/images/cartItem.jpg",
     price: 12.5
   },
   {
     id: 3,
-    source: "images/car.jpg",
+    source: "src/images/car.jpg",
     price: 12.5
   },
   {
     id: 4,
-    source: images/car.jpg,
+    source: "src/images/car.jpg",
     price: 16.5
   },
   {
     id:5,
-    source: images/car.jpg,
+    source: "src/images/car.jpg",
     price: 17
   },
   {
     id: 6,
-    source: images/car.jpg,
+    source: "src/images/car.jpg",
     price: 17.56
   },
   {
     id: 7,
-    source: images.car.jpg,
+    source: "src/images.car.jpg",
     price: 20
   }
 ]
