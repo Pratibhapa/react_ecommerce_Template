@@ -178,37 +178,44 @@ const CartItem = (props) => {
 const carts = [
 	{
 		id: 1,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-1",
 		price: 10.25
 	},
 	{
 		id: 2,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-2",
 		price: 20.13
 	},
 	{
 		id: 3,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-3",
 		price: 35
 	},
 	{
 		id: 4,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-4",
 		price: 12
 	},
 	{
 		id: 5,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-5",
 		price: 16
 	},
 	{
 		id: 6,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-6",
 		price: 11.56
 	},
 	{
 		id: 7,
-		source: "src/images/car.jpg",
+		source: "",
+		name: "Product-7",
 		price: 16.15
 	},
 ]
